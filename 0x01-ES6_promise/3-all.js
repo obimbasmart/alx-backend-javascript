@@ -8,5 +8,8 @@ export default function handleProfileSignup() {
         .then((res) => {
           console.log(`${body} ${res.firstName} ${res.lastName}`);
         });
+    })
+    .catch(() => {
+      console.log('Signup system offline');
     });
 }
