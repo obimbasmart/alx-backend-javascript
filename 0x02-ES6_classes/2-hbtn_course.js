@@ -1,16 +1,5 @@
 class HolbertonCourse {
   constructor(name, length, students) {
-    if (typeof (name) !== 'string') {
-      throw TypeError('Name must be a string');
-    }
-    if (typeof (length) !== 'number') {
-      throw TypeError('Length must be a number');
-    }
-
-    if (typeof (students) !== 'object') {
-      throw TypeError('Students must be an iterable');
-    }
-
     this._name = name;
     this._length = length;
     this._students = students;
@@ -18,15 +7,30 @@ class HolbertonCourse {
 
   get name() { return this._name; }
 
-  set name(value) { this._name = value; }
+  set name(value) {
+    if (typeof (value) !== 'string') {
+      throw TypeError('Name must be a string');
+    }
+    this._name = value;
+  }
 
   get length() { return this._length; }
 
-  set length(value) { this._length = value; }
+  set length(value) {
+    if (typeof (value) !== 'number') {
+      throw TypeError('Length must be a number');
+    }
+    this._length = value;
+  }
 
   get students() { return this._students; }
 
-  set students(value) { this._students = value; }
+  set students(value) {
+    if (typeof (students) !== 'object') {
+      throw TypeError('Students must be an iterable');
+    }
+    this._students = value;
+  }
 }
 
 export default HolbertonCourse;
