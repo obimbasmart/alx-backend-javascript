@@ -3,7 +3,7 @@
  * @code: code number
  */
 class Currency {
-  constructor(name, code) {
+  constructor(code, name) {
     this._name = name;
     this._code = code;
   }
@@ -16,7 +16,7 @@ class Currency {
 
   set code(value) { this._code = value; }
 
-  displayFullCurrency() { return `${this.code} (${this.name})`; }
+  displayFullCurrency() { return `${this.name} (${this.code})`; }
 }
 
 export default Currency;
