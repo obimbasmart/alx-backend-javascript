@@ -22,11 +22,11 @@ class HolbertonCourse {
 
   get length() { return this._length; }
 
-  set length(value) { this._name = value; }
+  set length(value) { this._length = value; }
 
   get students() { return this._students; }
 
-  set students(value) { this._name = value; }
+  set students(value) { this._students = value; }
 }
 
 export default HolbertonCourse;
