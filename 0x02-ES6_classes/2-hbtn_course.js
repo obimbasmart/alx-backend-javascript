@@ -4,7 +4,7 @@ class HolbertonCourse {
       throw TypeError('Name must be a string');
     }
     if (typeof (length) !== 'number') {
-      throw TypeError('Length must be a string');
+      throw TypeError('Length must be a number');
     }
 
     if (typeof (students) !== 'object') {
