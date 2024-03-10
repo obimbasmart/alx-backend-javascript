@@ -11,6 +11,10 @@ class HolbertonCourse {
 
   get length() { return this._length; }
 
+  set length(value) { this._name = value; }
+
+  get students() { return this._students; }
+
   set students(value) { this._name = value; }
 }
 
