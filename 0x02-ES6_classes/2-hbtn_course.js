@@ -26,7 +26,7 @@ class HolbertonCourse {
   get students() { return this._students; }
 
   set students(value) {
-    if (typeof (students) !== 'object') {
+    if (typeof (value) !== 'object') {
       throw TypeError('Students must be an iterable');
     }
     this._students = value;
