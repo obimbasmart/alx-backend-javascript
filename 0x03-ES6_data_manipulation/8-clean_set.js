@@ -6,7 +6,7 @@
  * @startString: string
  */
 export default function cleanSet(set, startString) {
-  if (!startString || typeof startString !== 'string') {
+  if (!set || !(set instanceof Set) || !startString || typeof startString !== 'string') {
     return '';
   }
 
