@@ -10,7 +10,12 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
-  return [...set.keys()].reduce((string, item, idx) => (item.startsWith(startString)
-    ? `${idx === 1 ? string.slice(startString.length) : string}-${item.slice(startString.length)}`
-    : string));
+  const filteredList = [];
+  set.forEach((element) => {
+    if (element.startsWith(startString)) {
+      filteredList.push(element);
+    }
+  });
+
+  return filteredList.join('-');
 }
