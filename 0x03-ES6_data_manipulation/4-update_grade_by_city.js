@@ -7,15 +7,15 @@
  * @newGrades: array of object { studentId: 78, grade: 50 }
  */
 export default function updateStudentGradeByCity(arr, city, newGrades) {
-  const students = arr.filter((student) => student.location === city);
+  return arr
+    .filter((student) => student.location === city)
+    .map((student) => {
+      const studentGrade = newGrades.filter((grade) => grade.studentId === student.id);
 
-  return students.map((student) => {
-    const studentGrade = newGrades.filter((grade) => grade.studentId === student.id);
+      if (studentGrade.length) {
+        return { ...student, grade: studentGrade[0].grade };
+      }
 
-    if (studentGrade.length) {
-      return { ...student, grade: studentGrade[0].grade };
-    }
-
-    return { ...student, grade: 'N/A' };
-  });
+      return { ...student, grade: 'N/A' };
+    });
 }
