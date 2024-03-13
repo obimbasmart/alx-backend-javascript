@@ -13,7 +13,7 @@ export default function cleanSet(set, startString) {
   const filteredList = [];
   set.forEach((element) => {
     if (element.startsWith(startString)) {
-      filteredList.push(element);
+      filteredList.push(element.slice(startString.length));
     }
   });
 
